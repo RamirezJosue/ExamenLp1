@@ -1,0 +1,58 @@
+<div class="container">
+<div style="padding:initial; width: 96%" class="panel panel-default" >
+  <div style="font-size:30px" class="panel-heading bg-primary"> Formulario de Registro de Diagnostico</div>
+  <div class="panel-body">
+    <form method="post" ng-submit="editDiagnostico()">
+      <div class="form-group">
+        <label for="estado" class="col-sm-2 control-label">Estado</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+            <input id="estado" type="text" placeholder="Seleccione Estado" class="form-control" ng-model="diagnostico.estado"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fecha" class="col-sm-2 control-label">Fecha</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <input id="fecha" type="date" placeholder="Colocar Fecha" class="form-control" ng-model="diagnostico.fecha"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="descripcion" class="col-sm-2 control-label">Descripcion</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <input id="descripcion" type="text" placeholder="Descripcion" class="form-control" ng-model="diagnostico.descripcion"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="idPaciente.idPaciente" class="col-sm-2 control-label">Paciente</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <select id="tipodiente" name="select" class="form-control" ng-model="diagnostico.idPaciente.idPaciente">
+            <option value="Seleccione">Seleccione</option>
+            <option id="idPaciente.nombres" ng-model="diagnostico.idPaciente.idPaciente.nombres"></option>
+            
+          </select>
+        </div>
+      </div>
+        
+      <div class="form-group">
+        <label for="idDoctor.idDoctor" class="col-sm-2 control-label">Doctor</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <select id="tipodiente" name="select" class="form-control" ng-model="diagnostico.idDoctor.idDoctor">
+            <option value="Seleccione">Seleccione</option>
+            <option id="diagnostico.idDoctor.nombres" ng-model="diagnostico.idDoctor.nombres"></option>
+            
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input id="idDiente" type="hidden" name="idDiente" ng-model="diagnostico.idDientes"/>        
+          <input id="guardar" type="submit" style="margin-right:5px" class="btn btn-primary" value="Guardar"/>
+          <a href="#/diagnostico" style="margin-right:5px" class="btn btn-danger">Cancelar  </a>
+          <input id="limpiar" type="reset" class="btn btn-success" value="Limpiar"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>

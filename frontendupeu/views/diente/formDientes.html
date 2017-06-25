@@ -1,0 +1,47 @@
+<div class="container">
+<div style="padding:initial; width: 96%" class="panel panel-default" >
+  <div style="font-size:30px" class="panel-heading bg-primary"> Formulario de Registro de Dientes</div>
+  <div class="panel-body">
+    <form method="post" ng-submit="saveDiente()">
+      <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">Imagen</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+            <input id="name" type="text" placeholder="Seleccione Imagen" class="form-control" ng-model="diente.imagen"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="codigo" class="col-sm-2 control-label">Codigo</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <input id="codigo" type="text" placeholder="Colocar Un Código" class="form-control" ng-model="diente.codigo"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <input id="nombre" type="text" placeholder="Nombre del Diente" class="form-control" ng-model="diente.nombre"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tipodiente" class="col-sm-2 control-label">Tipo Diente</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <select id="tipodiente" name="select" class="form-control" ng-model="diente.tipoDiente">
+            <option value="Seleccione">Seleccione</option>
+            <option value="Adult">Adulto</option>
+            <option value="Ninho">Niño</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input id="idDiente" type="hidden" name="idDiente" ng-model="diente.idDientes"/>        
+          <input id="guardar" type="submit" style="margin-right:5px" class="btn btn-primary" value="Guardar"/>
+          <a href="#/dientes" style="margin-right:5px" class="btn btn-danger">Cancelar  </a>
+          <input id="limpiar" type="reset" class="btn btn-success" value="Limpiar"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>

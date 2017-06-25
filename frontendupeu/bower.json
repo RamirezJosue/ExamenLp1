@@ -1,0 +1,31 @@
+{
+  "name": "frontendupeu",
+  "description": "app web",
+  "main": "index.js",
+  "authors": [
+    "DavidMP"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular"
+  ],
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-resource": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "angular-momentjs": "^0.2.2",
+    "moment": "^2.14.1",
+    "bootstrap": "~3.3.7",
+    "admin-lte": "~2.0.5",
+    "ionicons": "~2.0.1",
+    "font-awesome": "~4.7.0"
+  }
+}

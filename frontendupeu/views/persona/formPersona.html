@@ -1,0 +1,110 @@
+<div class="container">
+<div style="padding:initial; width: 96%" class="panel panel-default" >
+  <div style="font-size:30px" class="panel-heading bg-primary"> Formulario de Registro de Persona</div>
+  <div class="panel-body">
+    <form>
+      <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">Nombre</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <input id="name" type="text" placeholder="Nombre completo" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="apellidos" class="col-sm-2 control-label">Apellidos</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <input id="apellidos" type="text" placeholder="Apellidos completos" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dni" class="col-sm-2 control-label">DNI</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <input id="dni" type="text" placeholder="Ingrese su DNI" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fecha-de-nacimiento" class="col-sm-2 control-label">Fecha de nacimiento</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <input id="fecha-de-nacimiento" type="date" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dni" class="col-sm-2 control-label">Genero</label>
+        <label class="radio-inline">
+          <input id="masculino" type="radio" name="sexo" value="masculino"/>
+          <label for="masculino">Masculino   </label>
+        </label>
+        <label class="radio-inline">
+          <input id="femenino" type="radio" name="sexo" value="Femenino"/>
+          <label for="femenino">Femenino </label>
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="fecha-de-nacimiento" class="col-sm-2 control-label">Profesion</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10">
+          <select id="profesion" name="select" class="form-control">
+            <option value="Seleccione">Seleccione</option>
+            <option value="Ing. Sistemas">Ing. Sistemas</option>
+            <option value="Ing. Civil">Ing. Civil</option>
+            <option value="Ing. Ambiental">Ing. Ambiental </option>
+            <option value="Ing. Enfermeria">Ing. Enfermeria</option>
+            <option value="Ing. Educacion">Ing. Educacion</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dni" class="col-sm-2 control-label">Grado Estudio</label>
+        <label class="radio-inline">
+          <input id="bachiller" type="radio" name="nivel" value="Bachiller"/>
+          <label for="bachiller">Bachiller   </label>
+        </label>
+        <label class="radio-inline">
+          <input id="magister" type="radio" name="nivel" value="Magister"/>
+          <label for="magister">Magister</label>
+        </label>
+        <label class="radio-inline">
+          <input id="doctorado" type="radio" name="nivel" value="Doctorado"/>
+          <label for="doctorado">Doctorado          </label>
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="e-mail" class="col-sm-2 control-label">E-mail</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10"><span class="input-group-addon"><i aria-hidden="true" class="fa fa-envelope-o"></i></span>
+          <input id="e-mail" type="email" placeholder="E-mail" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone" class="col-sm-2 control-label">Telefono</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10"><span class="input-group-addon"><i aria-hidden="true" class="fa fa-phone"></i></span>
+          <input id="phone" type="tel" placeholder="Ingrese su telefono" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="usuario" class="col-sm-2 control-label">Usuario</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10"><span class="input-group-addon"><i aria-hidden="true" class="fa fa-user"></i></span>
+          <input id="usuario" type="text" placeholder="Usuario" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="clave" class="col-sm-2 control-label">Clave</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10"><span class="input-group-addon"><i aria-hidden="true" class="fa fa-cog"></i></span>
+          <input id="clave" type="password" placeholder="Password" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="v-clave" class="col-sm-2 control-label">Volver a escribir la clave</label>
+        <div style="margin-left:10px" class="col-sm-4 input-group col-xs-10"><span class="input-group-addon"><i aria-hidden="true" class="fa fa-cog"></i></span>
+          <input id="v-clave" type="password" placeholder="Password" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input id="idpersona" type="hidden" name="idpersona"/>
+          <a id="guardar" style="margin-right:5px" class="btn btn-primary">Guardar</a>
+          <a href="mainPersona" style="margin-right:5px" class="btn btn-danger">Cancelar  </a>
+          <button id="limpiar" type="button" class="btn btn-success">Limpiar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
