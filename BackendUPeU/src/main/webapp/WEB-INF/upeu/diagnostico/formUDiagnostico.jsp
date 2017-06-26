@@ -43,7 +43,7 @@
                         <td><fm:label path="idPaciente.idPaciente">Paciente</fm:label> </td> 
                             <td>
                             <fm:select path="idPaciente.idPaciente" cssClass="myinput"  >
-                                <fm:option value=""><c:out value="--------------------"/> </fm:option>
+                                <fm:option value=""><c:out value="CARLOS"/> </fm:option>
                                 <c:if test="${!empty ListPaciente}">
                                     <c:forEach var="pa"  items="${ListPaciente}">
                                         <fm:option value="${pa.idPaciente}" >
@@ -61,7 +61,7 @@
                         <td><fm:label path="idDoctor.idDoctor">Doctor</fm:label> </td> 
                             <td>
                             <fm:select path="idDoctor.idDoctor"  cssClass="myinput" >
-                                <fm:option value=""><c:out value="--------------------"/> </fm:option>
+                                <fm:option value=""><c:out value="Carlos"/> </fm:option>
                                 <fm:options items="${ListDoctor}" itemValue="idDoctor" itemLabel="idPersona.nombres"/>
                             </fm:select>
                         </td>

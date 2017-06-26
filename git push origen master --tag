@@ -1,0 +1,65 @@
+[33mtag v2.18.0[m
+Tagger: Gefersson <greimermorocco@gmail.com>
+Date:   Mon Jun 26 14:27:47 2017 -0500
+
+segundo y medio verison
+
+[33mcommit 0cb2431e6d239871309dbe6aef071d62731babf5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;33mtag: v2.18.0[m[33m, [m[1;33mtag: v2.17.0[m[33m, [m[1;33mtag: v2.16.0[m[33m, [m[1;33mtag: v2.15.0.windows.2[m[33m, [m[1;33mtag: v2.14.0.windows.2[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Gefersson <greimermorocco@gmail.com>
+Date:   Mon Jun 26 13:53:30 2017 -0500
+
+    hacer version
+
+[1mdiff --git a/BackendUPeU/src/main/java/pe/edu/upeu/control/DiagnosticoCController.java b/BackendUPeU/src/main/java/pe/edu/upeu/control/DiagnosticoCController.java[m
+[1mindex d8aeb21..6706a12 100644[m
+[1m--- a/BackendUPeU/src/main/java/pe/edu/upeu/control/DiagnosticoCController.java[m
+[1m+++ b/BackendUPeU/src/main/java/pe/edu/upeu/control/DiagnosticoCController.java[m
+[36m@@ -17,13 +17,14 @@[m [mimport org.springframework.ui.Model;[m
+ import org.springframework.ui.ModelMap;[m
+ import org.springframework.validation.BindingResult;[m
+ import org.springframework.web.bind.annotation.ModelAttribute;[m
+[31m-[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.PathVariable;[m
+ import org.springframework.web.bind.annotation.RequestMapping;[m
+ import org.springframework.web.bind.annotation.RequestMethod;[m
+ import org.springframework.web.servlet.ModelAndView;[m
+ import org.springframework.web.servlet.view.RedirectView;[m
+ import pe.edu.upeu.model.Diagnostico;[m
+[31m-[m
+[32m+[m[32mimport pe.edu.upeu.model.Doctor;[m
+[32m+[m[32mimport pe.edu.upeu.model.Paciente;[m
+ import pe.edu.upeu.service.DiagnosticoServis;[m
+ import pe.edu.upeu.service.DoctorServis;[m
+ import pe.edu.upeu.service.PacienteServis;[m
+[36m@@ -116,7 +117,9 @@[m [mpublic class DiagnosticoCController {[m
+            int id=Integer.parseInt(r.getParameter("id"));[m
+                Diagnostico diagnostico=null;[m
+                diagnostico=service.buscarEntidadId(id);[m
+[31m-               model.addAttribute("ModeloDiagnostico", diagnostico);             [m
+[32m+[m[32m               model.addAttribute("ModeloDiagnostico", diagnostico);[m[41m  [m
+[32m+[m[32m               model.addAttribute("ListDoctor", serviceDoc.listarEntidad());[m
+[32m+[m[32m               model.addAttribute("ListPaciente", servicePa.listarEntidad());[m
+             return "diagnostico/formUDiagnostico";[m
+         }[m
+ [m
+[1mdiff --git a/BackendUPeU/src/main/java/pe/edu/upeu/dao/DiagnosticoDaoImpl.java b/BackendUPeU/src/main/java/pe/edu/upeu/dao/DiagnosticoDaoImpl.java[m
+[1mindex d17c8f4..b608c00 100644[m
+[1m--- a/BackendUPeU/src/main/java/pe/edu/upeu/dao/DiagnosticoDaoImpl.java[m
+[1m+++ b/BackendUPeU/src/main/java/pe/edu/upeu/dao/DiagnosticoDaoImpl.java[m
+[36m@@ -24,7 +24,7 @@[m [mpublic class DiagnosticoDaoImpl extends SysDataAccess<Integer, Diagnostico> impl[m
+     public void modificarEntidadId(Diagnostico entidad) {update(entidad);}         [m
+     public List<Diagnostico> listarPorNombre(String dato){[m
+     return (List<Diagnostico>)sessionFactory.getCurrentSession()[m
+[31m-            .createQuery("select a from Diagnostico a where a.idPaciente.idPersona.nombres like ? ")        [m
+[32m+[m[32m            .createQuery("select a from Diagnostico a where a.idDiagnostico.dni fechaAlta ? ")[m[41m        [m
+             .setString(0, "%"+dato+"%")[m
+             .list();[m
+     }     [m
+[1mdiff --git a/BackendUPeU/src/main/java/pe/edu/upeu/model/Diagnostico.java b/BackendUPeU/src/main/java/pe/edu/upeu/model/Diagnostico.java[m
+[1mindex 963cc9c..a9d7177 100644[m
+[1m--- a/BackendUPeU/src/main/java/pe/edu/upeu/model/Diagnostico.java[m
+[1m+++ b/BackendUPeU/src/main/java/pe/edu/upeu/model/Diagnostico.java[m
+[36m@@ -23,6 +23,7 @@[m [mimport javax.persistence.TemporalType;[m
+ import javax.validation.constraints.NotNull;[m
+ import javax.validation.constraints.Size;[m
+ import javax.xml.bind.annotation.XmlRootElement;[m

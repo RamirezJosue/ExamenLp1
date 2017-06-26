@@ -68,29 +68,28 @@
           </div>
           <div class="panel panel-default">
                 <!-- Default panel contents -->
-              <div class="panel-heading"><span class="lead">List of Users </span></div>
+              <div class="panel-heading"><span class="lead">Tablas Daignostico </span></div>
               <div class="tablecontainer">
                           <c:if test="${!empty ListaDiagnostico}">
                             <table border="1">
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Apellidos</th>
-                                    <th>Estado</th>
-                                    <th>Fecha</th>
-                                    <th>Descripcion</th>
-                                    <th>Otros</th>
+                                    <th>Colegiatura</th>
+                                    
                                     <th>Opciones</th>
                                 </tr>
                 <c:forEach items="${ListaDiagnostico}" var= "dato">   
                 <tr>
-                    <td><c:out value="${dato.idPaciente.idPersona.nombres}"/></td> 
-                    <td><c:out value="${dato.idPaciente.idPersona.apellPaterno}"/> 
-                        <c:out value="${dato.idPaciente.idPersona.apellMater}"/></td>
-                    <td><c:out value="${dato.estado}"/></td>
-                    <td><c:out value="${dato.fecha}"/></td>
-                    <td><c:out value="${dato.descripcion}"/></td>     
+                    <td><c:out value="${dato.idDoctor.idPersona.nombres}"/></td> 
+                    <td><c:out value="${dato.idDoctor.idPersona.apellPaterno}"/> 
+                        <c:out value="${dato.idDoctor.idPersona.apellMater}"/></td>
+                   <td><c:out value="${dato.idDoctor.numeroColegio}"/></td>
+                
+               
+                
                     
-                    <td><c:out value="${dato.otros}"/></td>
+                 
                     <td>
                         <a href="eliminarDiagnostico?id=${dato.idDiagnostico}">Eliminar</a>&emsp14;  
                         <a href="modificarDiagnosticoX?id=${dato.idDiagnostico}">Modificar</a>
