@@ -54,7 +54,10 @@
                                 </c:if>
                             </fm:select> 
                         </td>
-                    </tr>  
+                    </tr>   
+
+
+
                     <tr>
                         <td><fm:label path="idDoctor.idDoctor">Doctor</fm:label> </td> 
                             <td>

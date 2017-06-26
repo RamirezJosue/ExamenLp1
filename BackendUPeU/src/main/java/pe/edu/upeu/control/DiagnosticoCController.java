@@ -17,13 +17,14 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 import pe.edu.upeu.model.Diagnostico;
-
+import pe.edu.upeu.model.Doctor;
+import pe.edu.upeu.model.Paciente;
 import pe.edu.upeu.service.DiagnosticoServis;
 import pe.edu.upeu.service.DoctorServis;
 import pe.edu.upeu.service.PacienteServis;
@@ -116,7 +117,9 @@ public class DiagnosticoCController {
            int id=Integer.parseInt(r.getParameter("id"));
                Diagnostico diagnostico=null;
                diagnostico=service.buscarEntidadId(id);
-               model.addAttribute("ModeloDiagnostico", diagnostico);             
+               model.addAttribute("ModeloDiagnostico", diagnostico);  
+               model.addAttribute("ListDoctor", serviceDoc.listarEntidad());
+               model.addAttribute("ListPaciente", servicePa.listarEntidad());
             return "diagnostico/formUDiagnostico";
         }
 

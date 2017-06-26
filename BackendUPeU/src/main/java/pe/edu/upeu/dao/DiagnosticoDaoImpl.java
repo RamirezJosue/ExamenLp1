@@ -24,7 +24,7 @@ public class DiagnosticoDaoImpl extends SysDataAccess<Integer, Diagnostico> impl
     public void modificarEntidadId(Diagnostico entidad) {update(entidad);}         
     public List<Diagnostico> listarPorNombre(String dato){
     return (List<Diagnostico>)sessionFactory.getCurrentSession()
-            .createQuery("select a from Diagnostico a where a.idPaciente.idPersona.nombres like ? ")        
+            .createQuery("select a from Diagnostico a where a.idDiagnostico.dni fechaAlta ? ")        
             .setString(0, "%"+dato+"%")
             .list();
     }     
