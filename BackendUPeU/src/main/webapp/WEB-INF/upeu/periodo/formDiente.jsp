@@ -12,8 +12,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-     <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>        
     </head>
     <body>
         <div>
@@ -29,22 +29,22 @@
                         <td><fm:label path="codigo">Codigo</fm:label> </td>
                         <td><fm:input path="codigo" size="60" /></td>
                     </tr>
-                    
+
                     <tr>
                         <td><fm:label path="nombre">Nombre</fm:label> </td>                        
                         <td><fm:input path="nombre" size="60" /></td>
                     </tr>                                     
                     <tr>
                         <td><fm:label path="tipoDiente">Tipo Diente</fm:label> </td>
-                        <td>
-                        <fm:select path="tipoDiente">
-                            <fm:option value="Adult">Adulto</fm:option>
-                            <fm:option value="Ninho">Niño</fm:option>
-                        </fm:select>
-                            
+                            <td>
+                            <fm:select path="tipoDiente">
+                                <fm:option value="Adult">Adulto</fm:option>
+                                <fm:option value="Ninho">Niño</fm:option>
+                            </fm:select>
+
                         </td>
                     </tr>
-                    
+
                     <tr>                        
                         <td colspan="2"><input type="submit" value="Enviar" > </td>
                     </tr>

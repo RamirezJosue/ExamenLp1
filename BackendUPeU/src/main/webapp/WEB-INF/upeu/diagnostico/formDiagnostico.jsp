@@ -22,7 +22,7 @@
                 <table>
 
                     <tr>
-                            <td><fm:label path="estado">Estado</fm:label> </td>
+                        <td><fm:label path="estado">Estado</fm:label> </td>
                         <td><fm:input path="estado" /></td>
                     </tr>
                     <tr>

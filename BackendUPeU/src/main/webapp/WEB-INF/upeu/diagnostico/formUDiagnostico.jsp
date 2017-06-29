@@ -12,8 +12,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-     <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>         
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>         
     </head>
     <body>
         <div>
@@ -66,10 +66,10 @@
                             </fm:select>
                         </td>
                     </tr>  
-                    
+
                     <tr>                        
                         <td colspan="2">
-                        <fm:hidden path="idDiagnostico" />
+                            <fm:hidden path="idDiagnostico" />
                             <input type="submit" value="Guardar" >
                         </td>
                     </tr>
